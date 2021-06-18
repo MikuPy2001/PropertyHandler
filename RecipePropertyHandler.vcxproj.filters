@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Dll.cpp" />
+    <ClCompile Include="RegisterExtension.cpp" />
+    <ClCompile Include="工厂.cpp" />
+    <ClCompile Include="注册与反注册.cpp" />
+    <ClCompile Include="自己的属性处理器.cpp" />
+    <ClCompile Include="XML.cpp" />
+    <ClCompile Include="属性处理器.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dll.h" />
+    <ClInclude Include="RegisterExtension.h" />
+    <ClInclude Include="自己的属性处理器.h" />
+    <ClInclude Include="jsonxx\json.hpp">
+      <Filter>jsonxx</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonxx\json_basic.hpp">
+      <Filter>jsonxx</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonxx\json_exception.hpp">
+      <Filter>jsonxx</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonxx\json_iterator.hpp">
+      <Filter>jsonxx</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonxx\json_parser.hpp">
+      <Filter>jsonxx</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonxx\json_serializer.hpp">
+      <Filter>jsonxx</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonxx\json_utils.hpp">
+      <Filter>jsonxx</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonxx\json_value.hpp">
+      <Filter>jsonxx</Filter>
+    </ClInclude>
+    <ClInclude Include="XML.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="jsonxx">
+      <UniqueIdentifier>{7e326171-3902-4b04-b000-35daae2c25a7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="abcPropertyHandler.def" />
+  </ItemGroup>
+</Project>

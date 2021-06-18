@@ -1,0 +1,19 @@
+http://tool.pfan.cn/guidgen
+
+
+首先在草稿纸上拟定要使用的属性
+将你要使用的属性分为两堆,系统里有的,系统里没有的
+系统没有的属性先放一边,过会再讲
+在以下网址寻找系统里有的属性
+https://docs.microsoft.com/en-us/windows/win32/properties/props
+记住他的代号,通常为System.Author
+
+然后在 propkey.h 里搜索 他的代码定义
+例如
+PROPERTYKEY *作者 = &PKEY_Author;//System.Author
+
+-----------------------------------------------------------
+
+现在开始代码环节,首先复制下面代码,创建一个空的属性处理器
+自己的属性处理器1.cpp
+
