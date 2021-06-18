@@ -17,7 +17,11 @@ regsvr32.exe 你的64.dll
 右键标题栏,勾选 标题 作者
 即可看到效果
 
-
+建议使用 
+regsvr32.exe /u 你的32.dll
+regsvr32.exe /u 你的64.dll
+卸载你的旧DLL
+然后再更新新DLL
 
 
 Recipe Property Handler Sample
