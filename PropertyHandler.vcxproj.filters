@@ -5,14 +5,14 @@
     <ClCompile Include="RegisterExtension.cpp" />
     <ClCompile Include="工厂.cpp" />
     <ClCompile Include="注册与反注册.cpp" />
-    <ClCompile Include="自己的属性处理器.cpp" />
-    <ClCompile Include="XML.cpp" />
-    <ClCompile Include="属性处理器.cpp" />
+    <ClCompile Include="信息.cpp" />
+    <ClCompile Include="XmlHelp.cpp" />
+    <ClCompile Include="IPropertyStoreCacheHelp.cpp" />
+    <ClCompile Include="PropertyHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dll.h" />
     <ClInclude Include="RegisterExtension.h" />
-    <ClInclude Include="自己的属性处理器.h" />
     <ClInclude Include="jsonxx\json.hpp">
       <Filter>jsonxx</Filter>
     </ClInclude>
@@ -37,14 +37,15 @@
     <ClInclude Include="jsonxx\json_value.hpp">
       <Filter>jsonxx</Filter>
     </ClInclude>
-    <ClInclude Include="XML.h" />
+    <ClInclude Include="信息.h" />
+    <ClInclude Include="SafeRelease.h" />
+    <ClInclude Include="XmlHelp.h" />
+    <ClInclude Include="IPropertyStoreCacheHelp.h" />
+    <ClInclude Include="PropertyHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="jsonxx">
       <UniqueIdentifier>{7e326171-3902-4b04-b000-35daae2c25a7}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="abcPropertyHandler.def" />
   </ItemGroup>
 </Project>

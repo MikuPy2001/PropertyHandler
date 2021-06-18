@@ -1,39 +1,13 @@
-#pragma once
-//
-// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-// PARTICULAR PURPOSE.
-//
-// Copyright (c) Microsoft Corporation. All rights reserved.
+#include <shobjidl.h>
+#include <msxml6.h>
 
-#include <windows.h>
-#include <new>           // std::nothrow
-#include <shobjidl.h>    // IInitializeWithStream, IDestinationStreamFactory
-#include <propsys.h>     // Property System APIs and interfaces
-#include <propkey.h>     // System PROPERTYKEY definitions
-#include <propvarutil.h> // PROPVARIANT and VARIANT helper APIs
-#include <msxml6.h>      // DOM interfaces
-#include <wincrypt.h>    // CryptBinaryToString, CryptStringToBinary
-#include <strsafe.h>     // StringCchPrintf
 #include "Dll.h"
-#include "XML.h"
+#include "XmlHelp.h"
+#include "SafeRelease.h"
 
-
-// 等价于 ppt.Release();
-template <class T> void SafeRelease(T** ppT)
-{
-    if (*ppT)
-    {
-        OutputDebugString(L"SafeRelease()\r\n");
-        (*ppT)->Release();
-        *ppT = NULL;
-    }
-}
+//这个类负责解析 XML
 
 __inline BSTR CastToBSTRForInput(PCWSTR psz) { return const_cast<BSTR>(psz); }
-
-
 
 
 HRESULT XmlHelp(IStream* pStream_文件流, IXMLDOMDocument** XML)
@@ -144,22 +118,4 @@ HRESULT XmlHelp_getV_Release(BSTR* 子节点文本数组, long 子节点数量)
     delete[] 子节点文本数组;
 
     return S_OK;
-}
-
-// PROPVARIANT 返回值 = {};
-// PropVariantClear(&propvarValues_xml值);
-HRESULT IPropertyStoreCache_Set_Value(IPropertyStoreCache * Cache, const PROPERTYKEY* Type, BSTR* 子节点文本数组, long 子节点数量) 
-{
-    OutputDebugString(L"IPropertyStoreCache_Set_Value()\r\n");
-    PROPVARIANT 返回值 = {};
-    PropVariantInit(&返回值);
-    HRESULT hr = InitPropVariantFromStringVector(const_cast<PCWSTR*>(子节点文本数组), 子节点数量, &返回值);//设置
-    if (hr == S_OK) {
-        hr = PSCoerceToCanonicalValue(*Type, &返回值);//转换
-        if (hr == S_OK) {
-            hr = Cache->SetValueAndState(*Type, &返回值, PSC_NORMAL);//赋值
-        }
-    }
-    PropVariantClear(&返回值);
-    return hr;
 }

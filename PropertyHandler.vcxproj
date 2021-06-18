@@ -23,7 +23,7 @@
     <RootNamespace>RecipePropertyHandler</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>abcPropertyHandler</ProjectName>
+    <ProjectName>PropertyHandler</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -184,15 +184,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dll.cpp" />
+    <ClCompile Include="IPropertyStoreCacheHelp.cpp" />
     <ClCompile Include="RegisterExtension.cpp" />
-    <ClCompile Include="XML.cpp" />
-    <ClCompile Include="属性处理器.cpp" />
+    <ClCompile Include="XmlHelp.cpp" />
+    <ClCompile Include="信息.cpp" />
     <ClCompile Include="工厂.cpp" />
     <ClCompile Include="注册与反注册.cpp" />
-    <ClCompile Include="自己的属性处理器.cpp" />
+    <ClCompile Include="PropertyHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dll.h" />
+    <ClInclude Include="IPropertyStoreCacheHelp.h" />
     <ClInclude Include="jsonxx\json.hpp" />
     <ClInclude Include="jsonxx\json_basic.hpp" />
     <ClInclude Include="jsonxx\json_exception.hpp" />
@@ -202,11 +204,10 @@
     <ClInclude Include="jsonxx\json_utils.hpp" />
     <ClInclude Include="jsonxx\json_value.hpp" />
     <ClInclude Include="RegisterExtension.h" />
-    <ClInclude Include="XML.h" />
-    <ClInclude Include="自己的属性处理器.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="abcPropertyHandler.def" />
+    <ClInclude Include="SafeRelease.h" />
+    <ClInclude Include="XmlHelp.h" />
+    <ClInclude Include="信息.h" />
+    <ClInclude Include="PropertyHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,8 +3,18 @@
 #include <shlobj.h>
 #include <shlwapi.h>
 #include <Locale.h>
+
 #include "Dll.h"
-#include "自己的属性处理器.h"
+#include "PropertyHandler.h"
+
+
+//这个文件 涉及 COM 编程的一些特殊之处
+//我也不甚了解
+//大概就是COM组件不能直接使用
+//系统总是先获取一个IClassFactory的COM
+//再由IClassFactory间接获取目标COM
+//但是IClassFactory也是需要额外编写的
+
 
 typedef HRESULT(*PFNCREATEINSTANCE)(REFIID riid, void** ppvObject);
 struct CLASS_OBJECT_INIT
@@ -108,8 +118,7 @@ private:
 // 在这里添加该模块支持的类
 const CLASS_OBJECT_INIT c_rgClassObjectInit[] =
 {
-    //{ &__uuidof(CRecipePropertyHandler), CRecipePropertyHandler_CreateInstance },
-    { &__uuidof(CSongPropertyHandler), CSongPropertyHandler_CreateInstance }
+    { &__uuidof(CPropertyHandler), CSongPropertyHandler_CreateInstance }
 };
 
 STDAPI DllGetClassObject(REFCLSID clsid, REFIID riid, void** ppv)//系统首先尝试获取一个工厂类
